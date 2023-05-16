@@ -43,11 +43,11 @@ let config = {
   SPLAT_RADIUS: 0.25,
   SPLAT_FORCE: 6000,
   SHADING: true,
-  COLORFUL: false,
+  COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
   COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
   PAUSED: false,
-  BACK_COLOR: { r: 0, g: 0, b: 0 },
+  BACK_COLOR: '#000000',
   TRANSPARENT: false,
   BLOOM: false,
   BLOOM_ITERATIONS: 8,
@@ -1399,7 +1399,8 @@ function render(target) {
     gl.disable(gl.BLEND);
   }
 
-  if (!config.TRANSPARENT) drawColor(target, normalizeColor(config.BACK_COLOR));
+  if (!config.TRANSPARENT)
+    drawColor(target, normalizeColor(HEXtoRGB(config.BACK_COLOR)));
   if (target == null && config.TRANSPARENT) drawCheckerboard(target);
   drawDisplay(target);
 }
@@ -1690,23 +1691,19 @@ function generateColor() {
 }
 
 function HEXtoHSV(hex) {
-  // Remove the '#' symbol if present
   hex = hex.replace('#', '');
 
-  // Parse the hexadecimal values for red, green, and blue components
   const r = parseInt(hex.substring(0, 2), 16) / 255;
   const g = parseInt(hex.substring(2, 4), 16) / 255;
   const b = parseInt(hex.substring(4, 6), 16) / 255;
 
-  // Find the maximum and minimum channel values
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
 
   let h, s, v;
 
-  // Calculate the hue
   if (max === min) {
-    h = 0; // Hue is undefined, set to 0
+    h = 0;
   } else if (max === r) {
     h = ((g - b) / (max - min) + 6) % 6;
   } else if (max === g) {
@@ -1716,17 +1713,25 @@ function HEXtoHSV(hex) {
   }
   h /= 6;
 
-  // Calculate the saturation
   if (max === 0) {
-    s = 0; // Saturation is undefined, set to 0
+    s = 0;
   } else {
     s = (max - min) / max;
   }
 
-  // Calculate the value
   v = max;
 
   return { h, s, v };
+}
+
+function HEXtoRGB(hex) {
+  hex = hex.replace('#', '');
+
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+
+  return { r, g, b };
 }
 
 function HSVtoRGB(h, s, v) {
