@@ -1,0 +1,19 @@
+{
+  "name": "webgl-fluid-simulation",
+  "version": "1.0.0",
+  "description": "[Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Simulation.git"
+  },
+  "author": "Michael Brusegard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/issues"
+  },
+  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme"
+}

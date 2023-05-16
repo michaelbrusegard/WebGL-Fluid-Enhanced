@@ -6,33 +6,20 @@
         <title>WebGL Fluid Simulation</title>
         <meta name="description" content="A WebGL fluid simulation that works in mobile browsers.">
         <style>
-
-            * {
-                user-select: none;
-            }
-
-            html, body {
-                overflow: hidden;
-            }
-
             body {
                 margin: 0;
                 position: fixed;
-                width: 100%;
-                height: 100%;
-            }
-
-            canvas {
-                width: 100%;
-                height: 100%;
             }
         </style>
-        <script>
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        </script>
     </head>
     <body>
-        <canvas></canvas>
-        <script src="./script.js"></script>
+        <canvas style="width: 100vw; height: 100vh;"></canvas>
+        <script type="module">
+            import WebGLFluidSimulation from './script.js';
+
+            WebGLFluidSimulation(document.querySelector('canvas'), {
+                COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
+            });
+        </script>
     </body>
 </html>
