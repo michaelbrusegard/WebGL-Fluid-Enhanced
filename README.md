@@ -21,7 +21,7 @@ webGLFluidSimulation(document.querySelector('canvas'), {
   PRESSURE: 0.8, // Pressure value used in the simulation
   PRESSURE_ITERATIONS: 20, // Number of pressure iterations
   CURL: 30, // Curl value used in the simulation
-  START_SPLATS: 5, // Number of initial splats
+  START_SPLATS: 5, // Number of initial splats (Random number between n and n * 4)
   SPLAT_RADIUS: 0.25, // Radius of the splats
   SPLAT_FORCE: 6000, // Force applied by the splats
   SHADING: true, // Enables shading in the visualization
@@ -182,7 +182,7 @@ export class AppComponent implements OnInit {
       webGLFluidSimulation(canvasRef, {
         SIM_RESOLUTION: 256,
         VELOCITY_DISSIPATION: 0.99,
-        COLOR_PALETTE: [#ff7f00'],
+        COLOR_PALETTE: ['#ff7f00'],
       });
     });
   });
