@@ -27,7 +27,7 @@ webGLFluidSimulation(document.querySelector('canvas'), {
   SHADING: true, // Enables shading in the visualization
   COLORFUL: true, // Enables rapid changing of colors
   COLOR_UPDATE_SPEED: 10, // Speed of color update
-  COLOR_PALETTE: [], // Custom color palette (empty by default)
+  COLOR_PALETTE: [], // Custom color palette (empty by default, uses hex colors)
   PAUSED: false, // Pauses the simulation if true
   HOVER: true, // Enables interaction on hover
   BACK_COLOR: '#000000', // Background color of the canvas
