@@ -2,9 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <title>WebGL Fluid Simulation</title>
-        <meta name="description" content="A WebGL fluid simulation that works in mobile browsers.">
         <style>
             body {
                 margin: 0;
@@ -15,10 +12,13 @@
     <body>
         <canvas style="width: 100vw; height: 100vh;"></canvas>
         <script type="module">
-            import WebGLFluidSimulation from './script.js';
-
-            WebGLFluidSimulation(document.querySelector('canvas'), {
+            import webGLFluidSimulation from './script.js';
+            
+            webGLFluidSimulation(document.querySelector('canvas'), {
                 COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
+                SPLAT_RADIUS: 0.1,
+                VELOCITY_DISSIPATION: 0.99,
+                BLOOM: false,
             });
         </script>
     </body>
