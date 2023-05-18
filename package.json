@@ -10,12 +10,6 @@
     "@types",
     "LDR.png"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/webgl-fluid-simulation.mjs",
-      "require": "./dist/webgl-fluid-simulation.umd.js"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
