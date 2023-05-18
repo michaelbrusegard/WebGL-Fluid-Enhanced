@@ -1,21 +1,34 @@
 {
   "name": "webgl-fluid-simulation",
-  "version": "1.0.0",
-  "description": "[Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/)",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": ["dist", "@types"],
+  "version": "0.0.1",
+  "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
+  "author": "Michael Brusegard",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "@types/index.d.ts",
+  "files": [
+    "dist",
+    "@types"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/webgl-fluid-simulation.mjs",
+      "require": "./dist/webgl-fluid-simulation.umd.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Simulation.git"
   },
-  "author": "Michael Brusegard",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/issues"
   },
-  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme"
+  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme",
+  "devDependencies": {
+    "vite": "latest"
+  }
 }
