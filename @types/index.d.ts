@@ -19,6 +19,7 @@ declare module 'webgl-fluid-simulation' {
     HOVER?: boolean;
     BACK_COLOR?: string;
     TRANSPARENT?: boolean;
+    BRIGHTNESS?: number;
     BLOOM?: boolean;
     BLOOM_ITERATIONS?: number;
     BLOOM_RESOLUTION?: number;
@@ -30,10 +31,7 @@ declare module 'webgl-fluid-simulation' {
     SUNRAYS_WEIGHT?: number;
   }
 
-  function webGLFluidSimulation(
-    canvas: HTMLCanvasElement,
-    options: FluidSimulationOptions
-  ): void;
+  function webGLFluidSimulation(canvas: HTMLCanvasElement, options: FluidSimulationOptions): void;
 
   export default webGLFluidSimulation;
 }

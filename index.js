@@ -44,6 +44,7 @@ const defaultConfig = {
   HOVER: true,
   BACK_COLOR: '#000000',
   TRANSPARENT: false,
+  BRIGHTNESS: 0.5,
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
   BLOOM_RESOLUTION: 256,
@@ -1415,15 +1416,19 @@ export default function (canvas, config = {}) {
 
   function generateColor() {
     let hue;
+    let saturation;
     if (config.COLOR_PALETTE.length == 0) {
       hue = Math.random();
+      saturation = 1.0;
     } else {
       const randomIndex = Math.floor(Math.random() * config.COLOR_PALETTE.length);
       const color = config.COLOR_PALETTE[randomIndex];
-      hue = HEXtoHSV(color).h;
+      const HSVcolor = HEXtoHSV(color);
+      hue = HSVcolor.h;
+      saturation = HSVcolor.s;
     }
 
-    let c = HSVtoRGB(hue, 1.0, 1.0);
+    let c = HSVtoRGB(hue, saturation, config.BRIGHTNESS);
     c.r *= 0.15;
     c.g *= 0.15;
     c.b *= 0.15;
