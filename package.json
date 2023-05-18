@@ -7,8 +7,7 @@
   "main": "index.js",
   "types": "@types/index.d.ts",
   "files": [
-    "@types",
-    "LDR.png"
+    "@types"
   ],
   "scripts": {
     "dev": "vite",
@@ -21,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/issues"
   },
-  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme",
-  "devDependencies": {
-    "vite": "latest"
-  }
+  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme"
 }
