@@ -1,4 +1,4 @@
-DS_Store
+.DS_Store
 .vscode
 dist
 node_modules
