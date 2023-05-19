@@ -15,7 +15,7 @@ declare module 'webgl-fluid-simulation' {
     SHADING?: boolean;
     COLORFUL?: boolean;
     COLOR_UPDATE_SPEED?: number;
-    COLOR_PALETTE?: string;
+    COLOR_PALETTE?: string[];
     PAUSED?: boolean;
     PAUSE_KEY?: string;
     HOVER?: boolean;
@@ -33,7 +33,11 @@ declare module 'webgl-fluid-simulation' {
     SUNRAYS_WEIGHT?: number;
   }
 
-  function webGLFluidSimulation(canvas: HTMLCanvasElement, options: FluidSimulationOptions): void;
+  interface FluidSimulation {
+    simulation(canvas: HTMLCanvasElement, options: FluidSimulationOptions): void;
+    config(options: FluidSimulationOptions): void;
+  }
 
+  const webGLFluidSimulation: FluidSimulation;
   export default webGLFluidSimulation;
 }
