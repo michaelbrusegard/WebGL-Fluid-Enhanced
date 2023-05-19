@@ -10,9 +10,17 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
   npm install --save https://github.com/michaelbrusegard/WebGL-Fluid-Simulation
 ```
 
+## New Features
+- Ability to change config after simulation has started
+- Use hover to activate
+- Choose colors
+- Set background image
+- Specify how many splats should generate initially and from keypress
+- Assign specific key to pause and/or splats (Can be disabled)
+
 ## Config options
 ```js
-webGLFluidSimulation(document.querySelector('canvas'), {
+webGLFluidSimulation.config({
   SIM_RESOLUTION: 128, // Resolution of the simulation grid
   DYE_RESOLUTION: 1024, // Resolution of the dye grid
   CAPTURE_RESOLUTION: 512, // Resolution of captured frames
@@ -48,6 +56,27 @@ webGLFluidSimulation(document.querySelector('canvas'), {
 
 ```
 
+## General info
+
+### Usage
+Initialise:
+```js
+webGLFluidSimulation.simulation(document.querySelector('canvas'), {
+  // Optional options
+});
+```
+Edit config:
+```js
+webGLFluidSimulation.config({
+  // Options
+});
+```
+### Set background image
+To set background image make sure the `TRANSPARENT` option is set to `true`, and in the CSS you can set `background-image: url('<PHOTO-URL>');` and `background-size: 100% 100%;` to fill the whole canvas.
+
+### Background color
+When using the `BACK_COLOR` option, the color you provided will be whitened when the `BLOOM` option is set to `true`. 
+
 ## Examples
 ### HTML
 ```html
@@ -61,7 +90,7 @@ webGLFluidSimulation(document.querySelector('canvas'), {
         <script type='module'>
             import webGLFluidSimulation from 'webgl-fluid-simulation';
             
-            webGLFluidSimulation(document.querySelector('canvas'), {
+            webGLFluidSimulation.simulation(document.querySelector('canvas'), {
                 COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
                 HOVER: false,
                 SPLAT_RADIUS: 0.1,
@@ -81,7 +110,7 @@ const App = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    webGLFluidSimulation(canvasRef.current, {
+    webGLFluidSimulation.simulation(canvasRef.current, {
       SIM_RESOLUTION: 256,
       DENSITY_DISSIPATION: 0.8,
       PRESSURE_ITERATIONS: 30,
@@ -94,7 +123,7 @@ const App = () => {
 
 export default App;
 ```
-### Next.js
+### Next.js (tailwindcss)
 ```tsx
 'use client';
 import { useEffect, useRef } from 'react';
@@ -104,7 +133,7 @@ const App = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    webGLFluidSimulation(canvasRef.current!, {
+    webGLFluidSimulation.simulation(canvasRef.current!, {
       PRESSURE: 0.2,
       SUNRAYS: false,
       START_SPLATS: 10,
@@ -133,7 +162,7 @@ import WebGLFluid from 'webgl-fluid'
 const canvas = ref()
 
 onMounted(() => {
-  webGLFluidSimulation(canvas, {
+  webGLFluidSimulation.simulation(canvas, {
         SPLAT_RADIUS: 0.5,
         COLOR_UPDATE_SPEED: 20,
         BLOOM: false,
@@ -164,7 +193,7 @@ export class AppComponent implements OnInit {
   @ViewChild('canvasRef', { static: true }) canvasRef!: ElementRef;
 
   ngOnInit(): void {
-    webGLFluidSimulation(this.canvasRef.nativeElement, {
+    webGLFluidSimulation.simulation(this.canvasRef.nativeElement, {
       COLOR_PALETTE: ['#dd0031', '#c3002f', '#dd0031'],
       START_SPLATS: 50,
       TRANSPARENT: true,
@@ -182,7 +211,7 @@ export class AppComponent implements OnInit {
 
   onMount(() => {
     import('webgl-fluid-simulation').then(({ default: webGLFluidSimulation }) => {
-      webGLFluidSimulation(canvasRef, {
+      webGLFluidSimulation.simulation(canvasRef, {
         SIM_RESOLUTION: 256,
         VELOCITY_DISSIPATION: 0.99,
         COLOR_PALETTE: ['#ff7f00'],
