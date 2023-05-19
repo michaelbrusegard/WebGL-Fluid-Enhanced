@@ -8,14 +8,16 @@ declare module 'webgl-fluid-simulation' {
     PRESSURE?: number;
     PRESSURE_ITERATIONS?: number;
     CURL?: number;
-    START_SPLATS?: number;
+    SPLAT_AMOUNT?: number;
     SPLAT_RADIUS?: number;
     SPLAT_FORCE?: number;
+    SPLAT_KEY?: string;
     SHADING?: boolean;
     COLORFUL?: boolean;
     COLOR_UPDATE_SPEED?: number;
-    COLOR_PALETTE?: string[];
+    COLOR_PALETTE?: string;
     PAUSED?: boolean;
+    PAUSE_KEY?: string;
     HOVER?: boolean;
     BACK_COLOR?: string;
     TRANSPARENT?: boolean;

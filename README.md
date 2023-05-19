@@ -21,14 +21,16 @@ webGLFluidSimulation(document.querySelector('canvas'), {
   PRESSURE: 0.8, // Pressure value used in the simulation
   PRESSURE_ITERATIONS: 20, // Number of pressure iterations
   CURL: 30, // Curl value used in the simulation
-  START_SPLATS: 5, // Number of initial splats (Random number between n and n * 5)
+  SPLAT_AMOUNT: 5, // Number of initial splats (Random number between n and n * 5)
   SPLAT_RADIUS: 0.25, // Radius of the splats
   SPLAT_FORCE: 6000, // Force applied by the splats
+  SPLAT_KEY: 'Space', // Keyboard key to spawn new splats (empty to disable)
   SHADING: true, // Enables shading in the visualization
   COLORFUL: true, // Enables rapid changing of colors
   COLOR_UPDATE_SPEED: 10, // Speed of color update
   COLOR_PALETTE: [], // Custom color palette (empty by default, uses hex colors)
   PAUSED: false, // Pauses the simulation if true
+  PAUSE_KEY: 'KeyP', // Keyboard key to pause (empty to disable)
   HOVER: true, // Enables interaction on hover
   BACK_COLOR: '#000000', // Background color of the canvas
   TRANSPARENT: false, // Makes the canvas transparent if true

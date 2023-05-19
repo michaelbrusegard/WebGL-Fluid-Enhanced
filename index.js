@@ -33,14 +33,16 @@ const defaultConfig = {
   PRESSURE: 0.8,
   PRESSURE_ITERATIONS: 20,
   CURL: 30,
-  START_SPLATS: 5,
+  SPLAT_AMOUNT: 5,
   SPLAT_RADIUS: 0.25,
   SPLAT_FORCE: 6000,
+  SPLAT_KEY: 'Space',
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
   COLOR_PALETTE: [],
   PAUSED: false,
+  PAUSE_KEY: 'KeyP',
   HOVER: true,
   BACK_COLOR: '#000000',
   TRANSPARENT: false,
@@ -1032,7 +1034,7 @@ export default function (canvas, config = {}) {
 
   updateKeywords();
   initFramebuffers();
-  multipleSplats(parseInt(Math.random() * config.START_SPLATS * 4 + config.START_SPLATS));
+  multipleSplats(parseInt(Math.random() * config.SPLAT_AMOUNT * 4 + config.SPLAT_AMOUNT));
 
   let lastUpdateTime = Date.now();
   let colorUpdateTimer = 0.0;
@@ -1371,8 +1373,8 @@ export default function (canvas, config = {}) {
   });
 
   window.addEventListener('keydown', (e) => {
-    if (e.code === 'KeyP') config.PAUSED = !config.PAUSED;
-    if (e.key === ' ') splatStack.push(parseInt(Math.random() * 20) + 5);
+    if (e.code === config.PAUSE_KEY) config.PAUSED = !config.PAUSED;
+    if (e.code === config.SPLAT_KEY) splatStack.push(parseInt(Math.random() * config.SPLAT_AMOUNT * 4 + config.SPLAT_AMOUNT));
   });
 
   function updatePointerDownData(pointer, id, posX, posY) {
