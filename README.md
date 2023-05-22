@@ -16,7 +16,8 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 - Choose colors
 - Set background image
 - Specify how many splats should generate initially and from keypress
-- Assign specific key to pause and/or splats (Can be disabled)
+- Assign specific key to pause and splats (Can be disabled)
+- Trigger splats command
 
 ## Config options
 ```js
@@ -70,6 +71,10 @@ Edit config:
 webGLFluidSimulation.config({
   // Options
 });
+```
+Trigger splats:
+```js
+webGLFluidSimulation.splats();
 ```
 ### Set background image
 To set background image make sure the `TRANSPARENT` option is set to `true`, and in the CSS you can set `background-image: url('<PHOTO-URL>');` and `background-size: 100% 100%;` to fill the whole canvas.

@@ -57,8 +57,13 @@ const activeConfig = {
   SUNRAYS_RESOLUTION: 196,
   SUNRAYS_WEIGHT: 1.0,
 };
+let splatStack = [];
 
 const webGLFluidSimulation = {
+  // Trigger splats
+  splats() {
+    splatStack.push(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
+  },
   // Edit function
   config(config) {
     Object.assign(activeConfig, config);
@@ -83,7 +88,6 @@ const webGLFluidSimulation = {
     }
 
     let pointers = [];
-    let splatStack = [];
     let bloomFramebuffers = [];
     pointers.push(new pointerPrototype());
 

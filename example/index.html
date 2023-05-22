@@ -50,6 +50,10 @@
             webGLFluidSimulation.config( {
                 COLOR_PALETTE: ['#cc211b'],
             })
+
+            window.addEventListener('keydown', (event) => {
+            if (event.code === 'KeyS') webGLFluidSimulation.splats()});
+            
         </script>
     </body>
 </html>

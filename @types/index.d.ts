@@ -36,6 +36,7 @@ declare module 'webgl-fluid-simulation' {
   interface FluidSimulation {
     simulation(canvas: HTMLCanvasElement, options: FluidSimulationOptions): void;
     config(options: FluidSimulationOptions): void;
+    splats(): void;
   }
 
   const webGLFluidSimulation: FluidSimulation;
