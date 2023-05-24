@@ -33,6 +33,7 @@ const activeConfig = {
   PRESSURE: 0.8,
   PRESSURE_ITERATIONS: 20,
   CURL: 30,
+  INITIAL: true,
   SPLAT_AMOUNT: 5,
   SPLAT_RADIUS: 0.25,
   SPLAT_FORCE: 6000,
@@ -41,8 +42,6 @@ const activeConfig = {
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
   COLOR_PALETTE: [],
-  PAUSED: false,
-  PAUSE_KEY: 'KeyP',
   HOVER: true,
   BACK_COLOR: '#000000',
   TRANSPARENT: false,
@@ -58,11 +57,20 @@ const activeConfig = {
   SUNRAYS_WEIGHT: 1.0,
 };
 let splatStack = [];
+let paused = false;
 
 const webGLFluidSimulation = {
   // Trigger splats
   splats() {
     splatStack.push(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
+  },
+
+  paused() {
+    if (paused) {
+      paused = false;
+    } else {
+      paused = true;
+    }
   },
   // Edit function
   config(config) {
@@ -1043,7 +1051,8 @@ const webGLFluidSimulation = {
 
     updateKeywords();
     initFramebuffers();
-    multipleSplats(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
+
+    if (config.INITIAL) multipleSplats(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
 
     let lastUpdateTime = Date.now();
     let colorUpdateTimer = 0.0;
@@ -1054,7 +1063,7 @@ const webGLFluidSimulation = {
       if (resizeCanvas()) initFramebuffers();
       updateColors(dt);
       applyInputs();
-      if (!activeConfig.PAUSED) step(dt);
+      if (!paused) step(dt);
       render(null);
       requestAnimationFrame(update);
     }
@@ -1283,7 +1292,7 @@ const webGLFluidSimulation = {
     }
 
     function splatPointer(pointer) {
-      if (activeConfig.PAUSED) return;
+      if (paused) return;
       let dx = pointer.deltaX * activeConfig.SPLAT_FORCE;
       let dy = pointer.deltaY * activeConfig.SPLAT_FORCE;
       splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
@@ -1382,7 +1391,6 @@ const webGLFluidSimulation = {
     });
 
     window.addEventListener('keydown', (e) => {
-      if (e.code === activeConfig.PAUSE_KEY) activeConfig.PAUSED = !activeConfig.PAUSED;
       if (e.code === activeConfig.SPLAT_KEY) splatStack.push(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
     });
 
