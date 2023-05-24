@@ -1052,7 +1052,7 @@ const webGLFluidSimulation = {
     updateKeywords();
     initFramebuffers();
 
-    if (config.INITIAL) multipleSplats(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
+    if (!config.INITIAL) multipleSplats(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
 
     let lastUpdateTime = Date.now();
     let colorUpdateTimer = 0.0;
