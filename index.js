@@ -1344,12 +1344,10 @@ const webGLFluidSimulation = {
 
     canvas.addEventListener('mousemove', (e) => {
       let pointer = pointers[0];
-      if (pointer.down != undefined) {
-        if (!pointer.down) return;
-        let posX = scaleByPixelRatio(e.offsetX);
-        let posY = scaleByPixelRatio(e.offsetY);
-        updatePointerMoveData(pointer, posX, posY);
-      }
+      if (!pointer?.down) return;
+      let posX = scaleByPixelRatio(e.offsetX);
+      let posY = scaleByPixelRatio(e.offsetY);
+      updatePointerMoveData(pointer, posX, posY);
     });
 
     window.addEventListener('mouseup', () => {
@@ -1374,8 +1372,7 @@ const webGLFluidSimulation = {
         const touches = e.targetTouches;
         for (let i = 0; i < touches.length; i++) {
           let pointer = pointers[i + 1];
-          if (pointer.down === undefined) break;
-          if (!pointer.down) continue;
+          if (!pointer?.down) continue;
           let posX = scaleByPixelRatio(touches[i].pageX);
           let posY = scaleByPixelRatio(touches[i].pageY);
           updatePointerMoveData(pointer, posX, posY);
