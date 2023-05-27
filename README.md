@@ -18,8 +18,8 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 - Set if splats generate on initial load
 - Specify how many splats should generate initially and from keypress
 - Assign specific key to splats (Can be disabled)
-- Trigger splats command
-- Puase command
+- Trigger splats method
+- Paused method
 
 ## Config options
 ```js
