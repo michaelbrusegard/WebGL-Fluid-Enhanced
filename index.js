@@ -57,6 +57,7 @@ const activeConfig = {
   SUNRAYS_WEIGHT: 1.0,
 };
 let splatStack = [];
+let splatPlace = [];
 let paused = false;
 
 const webGLFluidSimulation = {
@@ -64,7 +65,11 @@ const webGLFluidSimulation = {
   splats() {
     splatStack.push(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
   },
+  splat(x, y, dx, dy, color = undefined) {
+    splatPlace.push([x, y, dx, dy, color]);
+  },
 
+  // Pause function
   paused() {
     if (paused) {
       paused = false;
@@ -1101,6 +1106,29 @@ const webGLFluidSimulation = {
 
     function applyInputs() {
       if (splatStack.length > 0) multipleSplats(splatStack.pop());
+      if (splatPlace.length > 0) {
+        const splatLoc = splatPlace.pop();
+        const normalizedX = splatLoc[0] / canvas.clientWidth;
+        console.log(normalizedX);
+        const normalizedY = 1 - splatLoc[1] / canvas.clientHeight;
+        const simplifiedDeltaX = splatLoc[2] / 2;
+        const simplifiedDeltaY = splatLoc[3] / 2;
+        let color;
+        if (splatLoc[4] != undefined) {
+          const HSVcolor = HEXtoHSV(splatLoc[4]);
+          const RGBcolor = HSVtoRGB(HSVcolor.h, HSVcolor.s, activeConfig.BRIGHTNESS);
+          RGBcolor.r *= 0.15;
+          RGBcolor.g *= 0.15;
+          RGBcolor.b *= 0.15;
+          color = RGBcolor;
+        } else {
+          color = generateColor();
+        }
+        color.r *= 10.0;
+        color.g *= 10.0;
+        color.b *= 10.0;
+        splat(normalizedX, normalizedY, simplifiedDeltaX, simplifiedDeltaY, color);
+      }
 
       pointers.forEach((p) => {
         if (p.moved) {

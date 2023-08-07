@@ -27,7 +27,7 @@
                 SPLAT_AMOUNT: 15,
                 SPLAT_RADIUS: 0.1,
                 SPLAT_FORCE: 6000,
-                SPLAT_KEY: ' ',
+                SPLAT_KEY: 'Space',
                 SHADING: true,
                 COLORFUL: true,
                 COLOR_UPDATE_SPEED: 10,
@@ -51,7 +51,8 @@
             })
 
             window.addEventListener('keydown', (event) => {
-            if (event.code === 'KeyS') webGLFluidSimulation.paused()});
+            if (event.code === 'KeyS') webGLFluidSimulation.paused()
+            if (event.code === 'KeyP') webGLFluidSimulation.splat(window.innerWidth / 2, window.innerHeight / 2, -1000, 1000)});
             
         </script>
     </body>

@@ -13,13 +13,14 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 ## New Features
 - Ability to change config after simulation has started
 - Use hover to activate
-- Choose colors
+- Choose colors used in simulation
 - Set background image
 - Set if splats generate on initial load
 - Specify how many splats should generate initially and from keypress
 - Assign specific key to splats (Can be disabled)
 - Trigger splats method
 - Paused method
+- Method to splat at specific coordinates
 
 ## Config options
 ```js
@@ -76,6 +77,22 @@ webGLFluidSimulation.config({
 Trigger splats:
 ```js
 webGLFluidSimulation.splats();
+```
+Splat at specific coordinates:
+```js
+// x and y are the coordinates in the HTML document where the splat should occur.
+// They represent the position of the center of the splat.
+webGLFluidSimulation.splat(x, y,
+
+// dx and dy represent the directional components of the splat's force.
+// They determine the direction of the fluid movement caused by the splat.
+// These values are best in the range from -1000 to 1000, with 0 representing no force.
+dx, dy,
+
+// color is the color of the fluid added by the splat as a string in hexadecimal format.
+// This parameter is optional. If not provided, colors from the palette or then a random color may be used.
+color);
+
 ```
 Pause/resume the simulation:
 ```js
