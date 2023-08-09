@@ -1,3 +1,10 @@
+## [0.3.11](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.10...v0.3.11) (2023-08-09)
+
+
+### Bug Fixes
+
+* :bug: trying only publishing to github packages ([a8dee90](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/a8dee90d7819e139bd5384a8e4c9fe3a10ce6a1f))
+
 ## [0.3.10](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.9...v0.3.10) (2023-08-09)
 
 
