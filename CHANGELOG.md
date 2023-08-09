@@ -1,3 +1,10 @@
+## [0.3.17](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.16...v0.3.17) (2023-08-09)
+
+
+### Bug Fixes
+
+* retry npm registry publish ([25702b5](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/25702b528c0c4a944898b8c72fcc6e7c919befa0))
+
 ## [0.3.13](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.12...v0.3.13) (2023-08-09)
 
 
