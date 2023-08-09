@@ -1,3 +1,10 @@
+## [0.3.22](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.21...v0.3.22) (2023-08-09)
+
+
+### Bug Fixes
+
+* removed scope from name ([95bcac9](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/95bcac9dd24dd33533aa62f1504dfb488063618d))
+
 ## [0.3.21](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.20...v0.3.21) (2023-08-09)
 
 
