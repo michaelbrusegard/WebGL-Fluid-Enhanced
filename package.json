@@ -21,9 +21,6 @@
     "build": "vite build",
     "dev": "vite"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Simulation.git"
