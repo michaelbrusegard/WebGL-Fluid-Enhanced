@@ -1,3 +1,10 @@
+## [0.3.4](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.3...v0.3.4) (2023-08-09)
+
+
+### Bug Fixes
+
+* :bug: added Personal Access Token to fix package publishing ([10e23d9](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/10e23d9ccc07d852de6b02b56e350a67bbbf7531))
+
 ## [0.3.3](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.2...v0.3.3) (2023-08-09)
 
 

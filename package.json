@@ -1,6 +1,6 @@
 {
   "name": "@michaelbrusegard/webgl-fluid-simulation",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
   "license": "MIT",
