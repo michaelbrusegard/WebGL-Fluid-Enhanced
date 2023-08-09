@@ -21,7 +21,6 @@ jobs:
               with:
                 node-version: 18
                 registry-url: https://npm.pkg.github.com/
-                scope: '@${{ github.repository_owner }}'
 
             - name: Install dependencies
               run: npm install

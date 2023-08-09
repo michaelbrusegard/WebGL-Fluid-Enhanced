@@ -22,7 +22,7 @@
     "dev": "vite"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com//@michaelbrusegard"
   },
   "repository": {
     "type": "git",
