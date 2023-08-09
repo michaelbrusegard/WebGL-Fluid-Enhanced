@@ -1,3 +1,10 @@
+## [0.3.5](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.4...v0.3.5) (2023-08-09)
+
+
+### Bug Fixes
+
+* :bug: reverted to old workflow run environment ([1403f87](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/1403f87e89e48e6cd9d1a257f1f4709f68d9eaef))
+
 ## [0.3.4](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.3...v0.3.4) (2023-08-09)
 
 
