@@ -5,30 +5,8 @@ on:
         types: [created]
 
 jobs:
-    build:
-        name: Build Package
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
-              with:
-                node-version: 18
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Build package
-              run: npm run build
-
-            - name: Prepare package
-              run: npm run prepare
-
     publish:
         name: Publish to GitHub Package Registry
-        needs: build
         runs-on: ubuntu-latest
         permissions:
             packages: write
@@ -42,10 +20,7 @@ jobs:
               with:
                 node-version: 18
                 registry-url: https://npm.pkg.github.com/
-
-            - name: Install dependencies
-              run: npm ci
-
+                
             - name: Publish to GitHub Packages
               run: npm publish
               env:

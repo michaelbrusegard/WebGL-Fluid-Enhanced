@@ -20,7 +20,8 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm i --ignore-scripts
+
 
       - name: Generate Changelog
         run: npx conventional-changelog -p angular -i CHANGELOG.md -s

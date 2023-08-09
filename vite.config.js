@@ -7,7 +7,6 @@ export default () => {
       lib: {
         name,
         entry: resolve(__dirname, 'src/index.js'),
-        types: resolve(__dirname, 'src/index.d.ts'),
       },
       rollupOptions: {
         output: {

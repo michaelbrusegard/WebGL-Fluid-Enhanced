@@ -17,8 +17,8 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "mkdir -p dist && cp src/index.d.ts dist/webgl-fluid-simulation.d.ts",
     "build": "vite build",
-    "prepare": "cp src/index.d.ts dist/webgl-fluid-simulation.d.ts",
     "dev": "vite",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
