@@ -6,11 +6,6 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     '@semantic-release/git',
-    [
-      '@semantic-release/github',
-      {
-        assets: 'dist/**',
-      },
-    ],
+    '@semantic-release/github',
   ],
 };
