@@ -1,19 +1,14 @@
 name: Publish Node.js Package
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [created]
+  workflow_dispatch:
 
 jobs:
     publish:
         name: Publish to GitHub Package Registry
         runs-on: ubuntu-latest
-        if: |
-          startsWith(github.event.head_commit.message, 'feat') ||
-          startsWith(github.event.head_commit.message, 'fix') ||
-          startsWith(github.event.head_commit.message, 'perf') ||
-          startsWith(github.event.head_commit.message, 'BREAKING CHANGE')
         permissions:
             packages: write
             contents: read
@@ -36,4 +31,4 @@ jobs:
             - name: Publish to GitHub Packages
               run: npm publish
               env:
-                NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                NODE_AUTH_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
