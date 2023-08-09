@@ -13,7 +13,6 @@ jobs:
       issues: write
       pull-requests: write
       id-token: write
-      packages: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
