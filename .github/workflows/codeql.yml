@@ -1,15 +1,16 @@
 name: "CodeQL"
 
 on:
-  release:
-    types:
-      - published 
+  push:
+    branches:
+      - main
 
 jobs:
   analyze:
     name: Analyze
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    runs-on: 'ubuntu-latest'
+    if: startsWith(github.event.head_commit.message, 'chore(release)')
+    timeout-minutes: 15
     permissions:
       actions: read
       contents: read
@@ -26,7 +27,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
-        languages: ${{ matrix.language }}
+        languages: 'javascript'
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
@@ -34,4 +35,4 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
-        category: "/language:${{matrix.language}}"
+        category: "/language:'javascript'"

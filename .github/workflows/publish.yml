@@ -1,14 +1,15 @@
 name: Publish Node.js Package
 
 on:
-    release:
-        types: [published]
-    workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
     publish:
         name: Publish to GitHub Package Registry
         runs-on: ubuntu-latest
+        if: startsWith(github.event.head_commit.message, 'chore(release)')
         permissions:
             packages: write
             contents: read
