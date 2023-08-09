@@ -1,3 +1,10 @@
+## [0.3.23](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.22...v0.3.23) (2023-08-09)
+
+
+### Bug Fixes
+
+* removed packages permission ([f661740](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/f66174049d6ef66191bd3b278d3dd804f12a736f))
+
 ## [0.3.22](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.21...v0.3.22) (2023-08-09)
 
 
