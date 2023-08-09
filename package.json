@@ -19,8 +19,7 @@
   "scripts": {
     "prepare": "mkdir -p dist && cp src/index.d.ts dist/webgl-fluid-simulation.d.ts",
     "build": "vite build",
-    "dev": "vite",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "dev": "vite"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -34,7 +33,8 @@
   },
   "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme",
   "devDependencies": {
-    "conventional-changelog-cli": "^3.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "semantic-release": "^21.0.7",
     "vite": "^4.4.9"
   }
 }
