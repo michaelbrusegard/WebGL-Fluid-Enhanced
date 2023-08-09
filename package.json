@@ -1,5 +1,5 @@
 {
-  "name": "webgl-fluid-simulation",
+  "name": "@michaelbrusegard/webgl-fluid-simulation",
   "version": "0.1.1",
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
@@ -22,7 +22,7 @@
     "dev": "vite"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com//@michaelbrusegard"
+    "registry": "https://npm.pkg.github.com/@michaelbrusegard"
   },
   "repository": {
     "type": "git",
