@@ -1,3 +1,10 @@
+## [0.3.6](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.5...v0.3.6) (2023-08-09)
+
+
+### Bug Fixes
+
+* :bug: reverted to old codeql ([dc1efa1](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/dc1efa1d511b8cbe616edd522cdf1d9fd5ac0711))
+
 ## [0.3.5](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.4...v0.3.5) (2023-08-09)
 
 
