@@ -8,6 +8,11 @@ jobs:
   analyze:
     name: Analyze
     runs-on: 'ubuntu-latest'
+    if: |
+      startsWith(github.event.head_commit.message, 'feat') ||
+      startsWith(github.event.head_commit.message, 'fix') ||
+      startsWith(github.event.head_commit.message, 'perf') ||
+      startsWith(github.event.head_commit.message, 'BREAKING CHANGE')
     timeout-minutes: 15
     permissions:
       actions: read
