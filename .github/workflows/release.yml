@@ -23,7 +23,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-          scope: "@${{ github.repository_owner }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         
