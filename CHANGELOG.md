@@ -1,3 +1,10 @@
+## [0.3.12](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.11...v0.3.12) (2023-08-09)
+
+
+### Bug Fixes
+
+* :bug: retry deistributing to npm registry ([7ccdb84](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/7ccdb849e5a5b6c10afabf585cab47681c1af7fa))
+
 ## [0.3.11](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.10...v0.3.11) (2023-08-09)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@michaelbrusegard/webgl-fluid-simulation",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
   "license": "MIT",
@@ -37,15 +37,16 @@
     "vite": "^4.4.9"
   },
   "release": {
-    "branches": ["main"],
-
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/npm",
-    "@semantic-release/git",
-    "@semantic-release/github"
-  ]
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }
