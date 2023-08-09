@@ -1,3 +1,10 @@
+## [0.3.13](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.12...v0.3.13) (2023-08-09)
+
+
+### Bug Fixes
+
+* added custom semantic config for npm library ([3de1c9d](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/commit/3de1c9da66427ea13f35762a658f8734095535d1))
+
 ## [0.3.12](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/compare/v0.3.11...v0.3.12) (2023-08-09)
 
 
