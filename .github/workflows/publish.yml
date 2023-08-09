@@ -9,7 +9,11 @@ jobs:
     publish:
         name: Publish to GitHub Package Registry
         runs-on: ubuntu-latest
-        if: startsWith(github.event.head_commit.message, 'chore(release)')
+        if: |
+          startsWith(github.event.head_commit.message, 'feat') ||
+          startsWith(github.event.head_commit.message, 'fix') ||
+          startsWith(github.event.head_commit.message, 'perf') ||
+          startsWith(github.event.head_commit.message, 'BREAKING CHANGE')
         permissions:
             packages: write
             contents: read
