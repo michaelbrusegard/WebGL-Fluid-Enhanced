@@ -13,6 +13,7 @@ jobs:
       issues: write
       pull-requests: write
       id-token: write
+      packages: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -23,6 +24,7 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
           scope: "@${{ github.repository_owner }}"
+        
 
       - name: Install Dependencies
         run: npm ci
