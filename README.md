@@ -20,6 +20,7 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 - Assign specific key to splats (Can be disabled)
 - Trigger splats method
 - Paused method
+- Brightness option
 - Method to splat at specific coordinates
 
 ## Config options
