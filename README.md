@@ -7,7 +7,7 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 
 ## Install
 ```bash
-  npm install --save https://github.com/michaelbrusegard/WebGL-Fluid-Simulation
+  npm install @michaelbrusegard/webgl-fluid-simulation
 ```
 
 ## New Features
