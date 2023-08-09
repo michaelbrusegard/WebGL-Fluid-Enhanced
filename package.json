@@ -1,5 +1,5 @@
 {
-  "name": "webgl-fluid-simulation",
+  "name": "@michaelbrusegard/webgl-fluid-simulation",
   "version": "0.3.13",
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
