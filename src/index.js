@@ -1372,14 +1372,13 @@ const webGLFluidEnhanced = {
 
     canvas.addEventListener('mousemove', (e) => {
       let pointer = pointers[0];
-      if (!(pointer?.down || activeConfig.HOVER)) return;
       let posX = scaleByPixelRatio(e.offsetX);
       let posY = scaleByPixelRatio(e.offsetY);
       updatePointerMoveData(pointer, posX, posY);
     });
 
     window.addEventListener('mouseup', () => {
-      updatePointerUpData(pointers[0]);
+      if (!activeConfig.HOVER) updatePointerUpData(pointers[0]);
     });
 
     canvas.addEventListener('touchstart', (e) => {
@@ -1400,7 +1399,6 @@ const webGLFluidEnhanced = {
         const touches = e.targetTouches;
         for (let i = 0; i < touches.length; i++) {
           let pointer = pointers[i + 1];
-          if (!(pointer?.down || activeConfig.HOVER)) continue;
           let posX = scaleByPixelRatio(touches[i].pageX);
           let posY = scaleByPixelRatio(touches[i].pageY);
           updatePointerMoveData(pointer, posX, posY);
@@ -1414,7 +1412,7 @@ const webGLFluidEnhanced = {
       for (let i = 0; i < touches.length; i++) {
         let pointer = pointers.find((p) => p.id == touches[i].identifier);
         if (pointer == null) continue;
-        updatePointerUpData(pointer);
+        if (!activeConfig.HOVER) updatePointerUpData(pointer);
       }
     });
 
@@ -1442,11 +1440,15 @@ const webGLFluidEnhanced = {
       pointer.texcoordY = 1.0 - posY / canvas.height;
       pointer.deltaX = correctDeltaX(pointer.texcoordX - pointer.prevTexcoordX);
       pointer.deltaY = correctDeltaY(pointer.texcoordY - pointer.prevTexcoordY);
-      pointer.moved = Math.abs(pointer.deltaX) > 0 || Math.abs(pointer.deltaY) > 0;
+      if (activeConfig.HOVER) {
+        pointer.moved = Math.abs(pointer.deltaX) > 0 || Math.abs(pointer.deltaY) > 0;
+      } else {
+        pointer.moved = pointer.down;
+      }
     }
 
     function updatePointerUpData(pointer) {
-      pointer.down = activeConfig.HOVER;
+      pointer.down = false;
     }
 
     function correctDeltaX(delta) {
