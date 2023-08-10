@@ -60,7 +60,7 @@ let splatStack = [];
 let splatPlace = [];
 let paused = false;
 
-const webGLFluidSimulation = {
+const webGLFluidEnhanced = {
   // Trigger splats
   splats() {
     splatStack.push(parseInt(Math.random() * activeConfig.SPLAT_AMOUNT * 4 + activeConfig.SPLAT_AMOUNT));
@@ -1612,4 +1612,4 @@ const webGLFluidSimulation = {
   },
 };
 
-export default webGLFluidSimulation;
+export default webGLFluidEnhanced;

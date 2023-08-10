@@ -5,31 +5,31 @@
   "author": "Michael Brusegard",
   "license": "MIT",
   "access": "public",
-  "main": "./dist/webgl-fluid-simulation.umd.js",
-  "module": "./dist/webgl-fluid-simulation.mjs",
-  "types": "./dist/webgl-fluid-simulation.d.ts",
+  "main": "./dist/webgl-fluid-enhanced.umd.js",
+  "module": "./dist/webgl-fluid-enhanced.mjs",
+  "types": "./dist/webgl-fluid-enhanced.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/webgl-fluid-simulation.mjs",
-      "require": "./dist/webgl-fluid-simulation.umd.js"
+      "import": "./dist/webgl-fluid-enhanced.mjs",
+      "require": "./dist/webgl-fluid-enhanced.umd.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "mkdir -p dist && cp src/index.d.ts dist/webgl-fluid-simulation.d.ts",
+    "prepare": "mkdir -p dist && cp src/index.d.ts dist/webgl-fluid-enhanced.d.ts",
     "build": "vite build",
     "dev": "vite"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Simulation.git"
+    "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced.git"
   },
   "bugs": {
-    "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/issues"
+    "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/issues"
   },
-  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Simulation#readme",
+  "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",

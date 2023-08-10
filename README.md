@@ -1,13 +1,13 @@
-# WebGL Fluid Simulation
+# WebGL Fluid Enhanced
 I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) for [my personal website](https://www.michaelbrusegard.com) ([see code](https://github.com/michaelbrusegard/personal-website)), but I couldn't find a way to use it with Next.js. So I decided to add ES Module Support. I also added some extra config options so I can personally customise it how I like and I removed the config GUI and other boilerplate. I hope you find it useful!
 
 [Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/) (This is the original version)
 
-![screenshot](https://github.com/michaelbrusegard/WebGL-Fluid-Simulation/assets/56915010/8c890d5e-61e2-43ed-986d-663237171888)
+![screenshot](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/8c890d5e-61e2-43ed-986d-663237171888)
 
 ## Install
 ```bash
-  npm install @michaelbrusegard/webgl-fluid-simulation
+  npm install webgl-fluid-enhanced
 ```
 
 ## New Features
@@ -25,7 +25,7 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 
 ## Config options
 ```js
-webGLFluidSimulation.config({
+webGLFluidEnhanced.config({
   SIM_RESOLUTION: 128, // Resolution of the simulation grid
   DYE_RESOLUTION: 1024, // Resolution of the dye grid
   CAPTURE_RESOLUTION: 512, // Resolution of captured frames
@@ -65,25 +65,25 @@ webGLFluidSimulation.config({
 ### Usage
 Initialise:
 ```js
-webGLFluidSimulation.simulation(document.querySelector('canvas'), {
+webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
   // Optional options
 });
 ```
 Edit config:
 ```js
-webGLFluidSimulation.config({
+webGLFluidEnhanced.config({
   // Options
 });
 ```
 Trigger splats:
 ```js
-webGLFluidSimulation.splats();
+webGLFluidEnhanced.splats();
 ```
 Splat at specific coordinates:
 ```js
 // x and y are the coordinates in the HTML document where the splat should occur.
 // They represent the position of the center of the splat.
-webGLFluidSimulation.splat(x, y,
+webGLFluidEnhanced.splat(x, y,
 
 // dx and dy represent the directional components of the splat's force.
 // They determine the direction of the fluid movement caused by the splat.
@@ -97,7 +97,7 @@ color);
 ```
 Pause/resume the simulation:
 ```js
-webGLFluidSimulation.paused();
+webGLFluidEnhanced.paused();
 ```
 ### Set background image
 To set background image make sure the `TRANSPARENT` option is set to `true`, and in the CSS you can set `background-image: url('<PHOTO-URL>');` and `background-size: 100% 100%;` to fill the whole canvas.
@@ -116,9 +116,9 @@ When using the `BACK_COLOR` option, the color you provided will be whitened when
     <body>
         <canvas style='width: 100vw; height: 100vh;'></canvas>
         <script type='module'>
-            import webGLFluidSimulation from 'webgl-fluid-simulation';
+            import webGLFluidEnhanced from 'webgl-fluid-simulation';
             
-            webGLFluidSimulation.simulation(document.querySelector('canvas'), {
+            webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
                 COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
                 HOVER: false,
                 SPLAT_RADIUS: 0.1,
@@ -132,13 +132,13 @@ When using the `BACK_COLOR` option, the color you provided will be whitened when
 ### React
 ```js
 import { useEffect, useRef } from 'react';
-import webGLFluidSimulation from 'webgl-fluid-simulation';
+import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 const App = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    webGLFluidSimulation.simulation(canvasRef.current, {
+    webGLFluidEnhanced.simulation(canvasRef.current, {
       SIM_RESOLUTION: 256,
       DENSITY_DISSIPATION: 0.8,
       PRESSURE_ITERATIONS: 30,
@@ -155,13 +155,13 @@ export default App;
 ```tsx
 'use client';
 import { useEffect, useRef } from 'react';
-import webGLFluidSimulation from 'webgl-fluid-simulation';
+import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 const App = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    webGLFluidSimulation.simulation(canvasRef.current!, {
+    webGLFluidEnhanced.simulation(canvasRef.current!, {
       PRESSURE: 0.2,
       SUNRAYS: false,
       START_SPLATS: 10,
@@ -190,7 +190,7 @@ import WebGLFluid from 'webgl-fluid'
 const canvas = ref()
 
 onMounted(() => {
-  webGLFluidSimulation.simulation(canvas, {
+  webGLFluidEnhanced.simulation(canvas, {
         SPLAT_RADIUS: 0.5,
         COLOR_UPDATE_SPEED: 20,
         BLOOM: false,
@@ -209,7 +209,7 @@ canvas {
 ```ts
 // Not tested!
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import webGLFluidSimulation from 'webgl-fluid-simulation';
+import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 @Component({
   selector: 'app-root',
@@ -221,7 +221,7 @@ export class AppComponent implements OnInit {
   @ViewChild('canvasRef', { static: true }) canvasRef!: ElementRef;
 
   ngOnInit(): void {
-    webGLFluidSimulation.simulation(this.canvasRef.nativeElement, {
+    webGLFluidEnhanced.simulation(this.canvasRef.nativeElement, {
       COLOR_PALETTE: ['#dd0031', '#c3002f', '#dd0031'],
       START_SPLATS: 50,
       TRANSPARENT: true,
@@ -238,8 +238,8 @@ export class AppComponent implements OnInit {
   let canvasRef;
 
   onMount(() => {
-    import('webgl-fluid-simulation').then(({ default: webGLFluidSimulation }) => {
-      webGLFluidSimulation.simulation(canvasRef, {
+    import('webgl-fluid-enhanced').then(({ default: webGLFluidEnhanced }) => {
+      webGLFluidEnhanced.simulation(canvasRef, {
         SIM_RESOLUTION: 256,
         VELOCITY_DISSIPATION: 0.99,
         COLOR_PALETTE: ['#ff7f00'],

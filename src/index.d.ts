@@ -1,4 +1,4 @@
-declare module 'webgl-fluid-simulation' {
+declare module 'webgl-fluid-enhanced' {
   interface FluidSimulationOptions {
     SIM_RESOLUTION?: number;
     DYE_RESOLUTION?: number;
@@ -41,6 +41,6 @@ declare module 'webgl-fluid-simulation' {
     paused(): void;
   }
 
-  const webGLFluidSimulation: FluidSimulation;
-  export default webGLFluidSimulation;
+  const webGLFluidEnhanced: FluidSimulation;
+  export default webGLFluidEnhanced;
 }

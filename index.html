@@ -12,9 +12,9 @@
     <body>
         <canvas style="width: 100vw; height: 100vh;"></canvas>
         <script type="module">
-            import webGLFluidSimulation from './src/index.js';
+            import webGLFluidEnhanced from './src/index.js';
             
-            webGLFluidSimulation.simulation(document.querySelector('canvas'), {
+            webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
                 SIM_RESOLUTION: 128,
                 DYE_RESOLUTION: 1024,
                 CAPTURE_RESOLUTION: 512,
@@ -46,13 +46,13 @@
                 SUNRAYS_WEIGHT: 1.0,
             });
 
-            webGLFluidSimulation.config( {
+            webGLFluidEnhanced.config( {
                 COLOR_PALETTE: ['#cc211b'],
             })
 
             window.addEventListener('keydown', (event) => {
-            if (event.code === 'KeyS') webGLFluidSimulation.paused()
-            if (event.code === 'KeyP') webGLFluidSimulation.splat(window.innerWidth / 2, window.innerHeight / 2, -1000, 1000)});
+            if (event.code === 'KeyS') webGLFluidEnhanced.paused()
+            if (event.code === 'KeyP') webGLFluidEnhanced.splat(window.innerWidth / 2, window.innerHeight / 2, -1000, 1000)});
             
         </script>
     </body>
