@@ -30,13 +30,12 @@
   },
   "homepage": "https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced#readme",
   "devDependencies": {
-    "@amanda-mitchell/semantic-release-npm-multiple": "^3.8.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "semantic-release": "^21.0.7",
     "vite": "^4.4.9"
   },
-  "release": {
+"release": {
     "branches": [
       "main"
     ],
@@ -44,15 +43,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      [
-      "@amanda-mitchell/semantic-release-npm-multiple",
-      {
-        "registries": {
-          "github": {},
-          "public": {}
-        }
-      }
-    ],
+      "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
     ]
