@@ -1,3 +1,10 @@
+## [0.4.5](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.4...v0.4.5) (2023-08-10)
+
+
+### Bug Fixes
+
+* :bug: fixed hover trigger to always work ([2582d60](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/2582d60f066695b813c4bebd2b0eb92cb5c5f26f))
+
 ## [0.4.4](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.3...v0.4.4) (2023-08-10)
 
 
