@@ -1,8 +1,9 @@
 # [WebGL Fluid Enhanced](https://www.npmjs.com/package/webgl-fluid-enhanced)
+
 [![npm version](https://img.shields.io/npm/v/webgl-fluid-enhanced.svg?color=green)](https://www.npmjs.com/package/webgl-fluid-enhanced)
 [![npm dependencies](https://img.shields.io/badge/dependencies-0-green.svg)](https://www.npmjs.com/package/webgl-fluid-enhanced)
 [![minzipped size](https://img.shields.io/bundlephobia/minzip/webgl-fluid-enhanced.svg?color=blue)](https://bundlephobia.com/package/webgl-fluid-enhanced)
-[![npm downloads](https://img.shields.io/npm/dt/webgl-fluid-enhanced?logo=npm&color=rgba(203,0,0,0.9))](https://www.npmjs.com/package/webgl-fluid-enhanced)
+[![npm downloads](<https://img.shields.io/npm/dt/webgl-fluid-enhanced?logo=npm&color=rgba(203,0,0,0.9)>)](https://www.npmjs.com/package/webgl-fluid-enhanced)
 [![conventional commits](https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits)](https://conventionalcommits.org)
 
 I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) for [my personal website](https://www.michaelbrusegard.com) ([see code](https://github.com/michaelbrusegard/personal-website)), but I couldn't find a way to use it with Next.js. So I decided to add ES Module Support. I also added some extra config options so I can personally customise it how I like and I removed the config GUI and other boilerplate. I hope you find it useful!
@@ -12,11 +13,13 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 ![screenshot](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/8c890d5e-61e2-43ed-986d-663237171888)
 
 ## Install
+
 ```bash
   npm install webgl-fluid-enhanced
 ```
 
 ## New Features
+
 - Ability to change config after simulation has started
 - Use hover to activate
 - Choose colors used in simulation
@@ -25,11 +28,12 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 - Specify how many splats should generate initially and from keypress
 - Assign specific key to splats (Can be disabled)
 - Trigger splats method
-- Paused method
+- Pause method
 - Brightness option
 - Method to splat at specific coordinates
 
 ## Config options
+
 ```js
 webGLFluidEnhanced.config({
   SIM_RESOLUTION: 128, // Resolution of the simulation grid
@@ -63,79 +67,105 @@ webGLFluidEnhanced.config({
   SUNRAYS_RESOLUTION: 196, // Resolution of the sunrays effect
   SUNRAYS_WEIGHT: 1.0, // Weight of the sunrays effect
 });
-
 ```
 
 ## General info
 
 ### Usage
+
 Initialise:
+
 ```js
 webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
   // Optional options
 });
 ```
+
 Edit config:
+
 ```js
 webGLFluidEnhanced.config({
   // Options
 });
 ```
+
 Trigger splats:
+
 ```js
 webGLFluidEnhanced.splats();
 ```
+
 Splat at specific coordinates:
+
 ```js
 // x and y are the coordinates in the HTML document where the splat should occur.
 // They represent the position of the center of the splat.
-webGLFluidEnhanced.splat(x, y,
+webGLFluidEnhanced.splat(
+  x,
+  y,
 
-// dx and dy represent the directional components of the splat's force.
-// They determine the direction of the fluid movement caused by the splat.
-// These values are best in the range from -1000 to 1000, with 0 representing no force.
-dx, dy,
+  // dx and dy represent the directional components of the splat's force.
+  // They determine the direction of the fluid movement caused by the splat.
+  // These values are best in the range from -1000 to 1000, with 0 representing no force.
+  dx,
+  dy,
 
-// color is the color of the fluid added by the splat as a string in hexadecimal format.
-// This parameter is optional. If not provided, colors from the palette or then a random color may be used.
-color);
-
+  // color is the color of the fluid added by the splat as a string in hexadecimal format.
+  // This parameter is optional. If not provided, colors from the palette or then a random color may be used.
+  color
+);
 ```
+
 Pause/resume the simulation:
+
 ```js
-webGLFluidEnhanced.paused();
+// drawWhilePaused is an optional boolean that determines whether it is possible to stil draw while the simulation is paused.
+webGLFluidEnhanced.pause(drawWhilePaused);
 ```
+
+Download a screenshot:
+
+```js
+webGLFluidEnhanced.screenshot();
+```
+
 ### Set background image
+
 To set background image make sure the `TRANSPARENT` option is set to `true`, and in the CSS you can set `background-image: url('<PHOTO-URL>');` and `background-size: 100% 100%;` to fill the whole canvas.
 
 ### Background color
-When using the `BACK_COLOR` option, the color you provided will be whitened when the `BLOOM` option is set to `true`. 
+
+When using the `BACK_COLOR` option, the color you provided will be whitened when the `BLOOM` option is set to `true`.
 
 ## Examples
+
 ### HTML
+
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8'>
-    </head>
-    <body>
-        <canvas style='width: 100vw; height: 100vh;'></canvas>
-        <script type='module'>
-            import webGLFluidEnhanced from 'webgl-fluid-simulation';
-            
-            webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
-                COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
-                HOVER: false,
-                SPLAT_RADIUS: 0.1,
-                VELOCITY_DISSIPATION: 0.99,
-                BLOOM: false,
-            });
-        </script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <canvas style="width: 100vw; height: 100vh;"></canvas>
+    <script type="module">
+      import webGLFluidEnhanced from 'webgl-fluid-simulation';
+
+      webGLFluidEnhanced.simulation(document.querySelector('canvas'), {
+        COLOR_PALETTE: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
+        HOVER: false,
+        SPLAT_RADIUS: 0.1,
+        VELOCITY_DISSIPATION: 0.99,
+        BLOOM: false,
+      });
+    </script>
+  </body>
 </html>
 ```
+
 ### React
+
 ```js
 import { useEffect, useRef } from 'react';
 import webGLFluidEnhanced from 'webgl-fluid-enhanced';
@@ -157,7 +187,9 @@ const App = () => {
 
 export default App;
 ```
+
 ### Next.js (tailwindcss)
+
 ```tsx
 'use client';
 import { useEffect, useRef } from 'react';
@@ -177,16 +209,18 @@ const App = () => {
     });
   }, []);
 
-  return <canvas ref={canvasRef} className='w-screen h-screen' />;
+  return <canvas ref={canvasRef} className="w-screen h-screen" />;
 };
 
 export default App;
 ```
+
 ### Vue.js
+
 ```vue
 <!-- Not tested! -->
 <template>
-  <canvas ref='canvas'></canvas>
+  <canvas ref="canvas"></canvas>
 </template>
 
 <script setup>
@@ -211,7 +245,9 @@ canvas {
 }
 </style>
 ```
+
 ### Angular
+
 ```ts
 // Not tested!
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -219,9 +255,7 @@ import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <canvas #canvasRef style="width: 100vw; height: 100vh;"></canvas>
-  `,
+  template: ` <canvas #canvasRef style="width: 100vw; height: 100vh;"></canvas> `,
 })
 export class AppComponent implements OnInit {
   @ViewChild('canvasRef', { static: true }) canvasRef!: ElementRef;
@@ -235,7 +269,9 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
 ### Svelte
+
 ```svelte
 <!-- Not tested! -->
 <script>
@@ -256,6 +292,7 @@ export class AppComponent implements OnInit {
 
 <canvas bind:this={canvasRef} style="width: 100vw; height: 100vh;" />
 ```
+
 ## References
 
 https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-38-fast-fluid-dynamics-simulation-gpu
