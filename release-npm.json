@@ -1,0 +1,6 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/npm"
+  ]
+}
