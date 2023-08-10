@@ -1370,15 +1370,17 @@ const webGLFluidEnhanced = {
       updatePointerDownData(pointer, -1, posX, posY);
     });
 
-    canvas.addEventListener('mousemove', (e) => {
-      let pointer = pointers[0];
-      let posX = scaleByPixelRatio(e.offsetX);
-      let posY = scaleByPixelRatio(e.offsetY);
-      updatePointerMoveData(pointer, posX, posY);
-    });
+    setTimeout(() => {
+      canvas.addEventListener('mousemove', (e) => {
+        let pointer = pointers[0];
+        let posX = scaleByPixelRatio(e.offsetX);
+        let posY = scaleByPixelRatio(e.offsetY);
+        updatePointerMoveData(pointer, posX, posY);
+      });
+    }, 500);
 
     window.addEventListener('mouseup', () => {
-      if (!activeConfig.HOVER) updatePointerUpData(pointers[0]);
+      updatePointerUpData(pointers[0]);
     });
 
     canvas.addEventListener('touchstart', (e) => {
@@ -1412,7 +1414,7 @@ const webGLFluidEnhanced = {
       for (let i = 0; i < touches.length; i++) {
         let pointer = pointers.find((p) => p.id == touches[i].identifier);
         if (pointer == null) continue;
-        if (!activeConfig.HOVER) updatePointerUpData(pointer);
+        updatePointerUpData(pointer);
       }
     });
 
