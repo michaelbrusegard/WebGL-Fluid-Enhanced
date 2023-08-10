@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.3.24...v0.4.0) (2023-08-10)
+
+
+### Features
+
+* :sparkles: renamed from webglfluidsimulation to webglfluidenhanced ([00f52b1](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/00f52b1ad89e2b1545e64f7e3376176c95092193))
+
 ## [0.3.24](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.3.23...v0.3.24) (2023-08-10)
 
 
