@@ -1,3 +1,11 @@
+## [0.4.4](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.3...v0.4.4) (2023-08-10)
+
+
+### Bug Fixes
+
+* added semantic release npm multiple ([b2bfbe8](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/b2bfbe812592755457cafd7644c6814fd8e76f4e))
+* resorted to only publish to npm registry ([6d2e40b](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/6d2e40be1447637991afabc7a37fe3ebac858896))
+
 # [0.4.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.3.24...v0.4.0) (2023-08-10)
 
 
