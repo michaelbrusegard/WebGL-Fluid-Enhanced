@@ -1,3 +1,10 @@
+## [0.4.7](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.6...v0.4.7) (2023-08-10)
+
+
+### Bug Fixes
+
+* :bug: delayed mousemove initialisation so it still works while hovering on page refresh ([c75b9d1](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/c75b9d1d45b806b2825a6c22d8bfe5be6b4cd9d5))
+
 ## [0.4.6](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.5...v0.4.6) (2023-08-10)
 
 
