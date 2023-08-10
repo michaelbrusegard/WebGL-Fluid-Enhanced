@@ -4,7 +4,6 @@
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
   "license": "MIT",
-  "access": "public",
   "main": "./dist/webgl-fluid-enhanced.umd.js",
   "module": "./dist/webgl-fluid-enhanced.mjs",
   "types": "./dist/webgl-fluid-enhanced.d.ts",
