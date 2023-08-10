@@ -1372,7 +1372,7 @@ const webGLFluidEnhanced = {
 
     canvas.addEventListener('mousemove', (e) => {
       let pointer = pointers[0];
-      if (!pointer?.down && !activeConfig.HOVER) return;
+      if (!(pointer?.down || activeConfig.HOVER)) return;
       let posX = scaleByPixelRatio(e.offsetX);
       let posY = scaleByPixelRatio(e.offsetY);
       updatePointerMoveData(pointer, posX, posY);
@@ -1400,7 +1400,7 @@ const webGLFluidEnhanced = {
         const touches = e.targetTouches;
         for (let i = 0; i < touches.length; i++) {
           let pointer = pointers[i + 1];
-          if (!pointer?.down && !activeConfig.HOVER) continue;
+          if (!(pointer?.down || activeConfig.HOVER)) continue;
           let posX = scaleByPixelRatio(touches[i].pageX);
           let posY = scaleByPixelRatio(touches[i].pageY);
           updatePointerMoveData(pointer, posX, posY);
@@ -1446,7 +1446,7 @@ const webGLFluidEnhanced = {
     }
 
     function updatePointerUpData(pointer) {
-      pointer.down = false;
+      pointer.down = activeConfig.HOVER;
     }
 
     function correctDeltaX(delta) {
