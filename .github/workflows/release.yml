@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  release-github:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,10 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://npm.pkg.github.com/
-          scope: '@${{ github.repository_owner }}'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
 
       - name: Install Dependencies
@@ -36,40 +32,9 @@ jobs:
 
       - name: Run Semantic Release
         env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --extends ./release-github.json
-
-  release-npm:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org/
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Run Semantic Release
-        env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --extends ./release-npm.json
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_NPM_CONFIG_REGISTRY: https://npm.pkg.github.com/
+          PUBLIC_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PUBLIC_NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
+        run: npx semantic-release
