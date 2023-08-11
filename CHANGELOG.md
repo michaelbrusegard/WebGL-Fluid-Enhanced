@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.7...v0.5.0) (2023-08-10)
+
+
+### Features
+
+* :sparkles: added new demo website and screenshot option ([2f195ab](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/2f195abae2b824e881c3a3c5fa2de940a22c4cfe))
+
 ## [0.4.7](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.6...v0.4.7) (2023-08-10)
 
 

@@ -10,7 +10,10 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 
 [Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/) (This is the original version)
 
-![screenshot](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/8c890d5e-61e2-43ed-986d-663237171888)
+## Screenshots
+![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/6671d84c-1672-41a6-851c-b20b174dd803)
+![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/f1d199b1-deb2-45f7-a2b1-2992eb42f562)
+![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/0cb4c9e3-dcba-4545-98ca-9c959e29bb73)
 
 ## Install
 
