@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.1...v0.5.2) (2023-08-11)
+
+
+### Bug Fixes
+
+* fixed updated github pages link ([f780099](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/f780099c6c5b5b597bac980e71279237bad68f02))
+
 ## [0.5.1](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.0...v0.5.1) (2023-08-11)
 
 
