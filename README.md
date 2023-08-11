@@ -6,7 +6,7 @@
 [![npm downloads](<https://img.shields.io/npm/dt/webgl-fluid-enhanced?logo=npm&color=rgba(203,0,0,0.9)>)](https://www.npmjs.com/package/webgl-fluid-enhanced)
 [![conventional commits](https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits)](https://conventionalcommits.org)
 
-I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) for [my personal website](https://www.michaelbrusegard.com) ([see code](https://github.com/michaelbrusegard/personal-website)), but I couldn't find a way to use it with Next.js. So I decided to add ES Module Support. I also added some extra config options so I can personally customise it how I like and I removed the config GUI and other boilerplate. I hope you find it useful!
+I wanted to use Pavel Dobryakov's [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) for [my personal website](https://www.michaelbrusegard.com) ([see code](https://github.com/michaelbrusegard/personal-website)), but I couldn't find a way to use it with Next.js. So I decided to add ES Module Support. I also added some extra config options so I can personally customise it how I like and I removed the config GUI and other boilerplate. I hope you find it useful!
 
 #### [Preview here!](https://michaelbrusegard.github.io/WebGL-Fluid-Enhanced/)
 
