@@ -15,6 +15,10 @@
         -ms-user-select: none;
         user-select: none;
       }
+      canvas {
+        width: 100svw;
+        height: 100svh;
+      }
       div {
         position: absolute;
         top: 0;
@@ -83,7 +87,7 @@
     </style>
   </head>
   <body>
-    <canvas style="width: 100vw; height: 100vh"></canvas>
+    <canvas></canvas>
     <div>
       webGLFluidEnhanced.<span style="color: #d1a8ff">config</span>({<br />
       &emsp;&emsp;<span style="color: #79c0ff">SIM_RESOLUTION</span>: <input type="text" id="sim-resolution" value="128" />,<br />
