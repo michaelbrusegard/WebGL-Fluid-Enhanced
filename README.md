@@ -8,7 +8,7 @@
 
 I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) for [my personal website](https://www.michaelbrusegard.com) ([see code](https://github.com/michaelbrusegard/personal-website)), but I couldn't find a way to use it with Next.js. So I decided to add ES Module Support. I also added some extra config options so I can personally customise it how I like and I removed the config GUI and other boilerplate. I hope you find it useful!
 
-[Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/) (This is the original version)
+#### [Preview here!](https://michaelbrusegard.github.io/WebGL-Fluid-Enhanced/)
 
 ## Screenshots
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/6671d84c-1672-41a6-851c-b20b174dd803)
