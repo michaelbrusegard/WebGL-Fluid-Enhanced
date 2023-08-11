@@ -10,6 +10,10 @@
         margin: 0;
         position: fixed;
         font-family: 'Source Code Pro', monospace;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
       div {
         position: absolute;
@@ -122,16 +126,16 @@
       import webGLFluidEnhanced from './src/index.js';
       const canvas = document.querySelector('canvas');
       const savedConfig = localStorage.getItem('fluidConfig');
-      const config = savedConfig ? JSON.parse(savedConfig) : {};
-      webGLFluidEnhanced.simulation(canvas, config);
+      const activeConfig = savedConfig ? JSON.parse(savedConfig) : {};
+      webGLFluidEnhanced.simulation(canvas, activeConfig);
 
-      if (savedConfig) updateConfigFromLocalStorage();
+      if (savedConfig) updateConfigFromLocalStorage(activeConfig);
 
       function saveConfigToLocalStorage(config) {
         localStorage.setItem('fluidConfig', JSON.stringify(config));
       }
 
-      function updateConfigFromLocalStorage() {
+      function updateConfigFromLocalStorage(config) {
         document.getElementById('sim-resolution').value = config.SIM_RESOLUTION;
         document.getElementById('dye-resolution').value = config.DYE_RESOLUTION;
         document.getElementById('capture-resolution').value = config.CAPTURE_RESOLUTION;
@@ -150,7 +154,7 @@
         document.getElementById('color-update-speed').value = config.COLOR_UPDATE_SPEED;
         document.getElementById('color-palette').value = JSON.stringify(config.COLOR_PALETTE);
         document.getElementById('hover').value = config.HOVER;
-        document.getElementById('back-color').value = config.BACK_COLOR;
+        document.getElementById('back-color').value = "'" + config.BACK_COLOR + "'";
         document.getElementById('transparent').value = config.TRANSPARENT;
         document.getElementById('brightness').value = config.BRIGHTNESS;
         document.getElementById('bloom').value = config.BLOOM;
@@ -178,13 +182,13 @@
           SPLAT_AMOUNT: parseFloat(document.getElementById('splat-amount').value),
           SPLAT_RADIUS: parseFloat(document.getElementById('splat-radius').value),
           SPLAT_FORCE: parseFloat(document.getElementById('splat-force').value),
-          SPLAT_KEY: document.getElementById('splat-key').value.replace(/'/g, '').trim(),
+          SPLAT_KEY: document.getElementById('splat-key').value.replace(/['"]/g, '').trim(),
           SHADING: document.getElementById('shading').value === 'true',
           COLORFUL: document.getElementById('colorful').value === 'true',
           COLOR_UPDATE_SPEED: parseInt(document.getElementById('color-update-speed').value),
           COLOR_PALETTE: JSON.parse(document.getElementById('color-palette').value.replace(/'/g, '"').trim()),
           HOVER: document.getElementById('hover').value === 'true',
-          BACK_COLOR: document.getElementById('back-color').value,
+          BACK_COLOR: document.getElementById('back-color').value.replace(/['"]/g, '').trim(),
           TRANSPARENT: document.getElementById('transparent').value === 'true',
           BRIGHTNESS: parseFloat(document.getElementById('brightness').value),
           BLOOM: document.getElementById('bloom').value === 'true',
@@ -246,11 +250,6 @@
           button.textContent = 'X';
         }
       }
-
-      const hiddenCanvas = document.createElement('canvas');
-      hiddenCanvas.width = canvas.width;
-      hiddenCanvas.height = canvas.height;
-      const hiddenCtx = hiddenCanvas.getContext('2d');
 
       function takeScreenshot() {
         webGLFluidEnhanced.screenshot();
