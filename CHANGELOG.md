@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.0...v0.5.1) (2023-08-11)
+
+
+### Bug Fixes
+
+* fixed back color setting on preview page ([ece6e67](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/ece6e67e655ec6b2014e7813327b8ed812ed18d0))
+
 # [0.5.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.4.7...v0.5.0) (2023-08-10)
 
 

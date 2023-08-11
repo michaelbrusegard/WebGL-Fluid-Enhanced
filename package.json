@@ -1,6 +1,6 @@
 {
   "name": "webgl-fluid-enhanced",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
   "author": "Michael Brusegard",
   "license": "MIT",
