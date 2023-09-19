@@ -13,6 +13,7 @@ I wanted to use Pavel Dobryakov's [WebGL Fluid Simulation](https://github.com/Pa
 ## Screenshots
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/6671d84c-1672-41a6-851c-b20b174dd803)
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/f1d199b1-deb2-45f7-a2b1-2992eb42f562)
+![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/6cc25eca-a60d-4a5c-bd19-1b8c034e0f31)
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/0cb4c9e3-dcba-4545-98ca-9c959e29bb73)
 
 ## Install
