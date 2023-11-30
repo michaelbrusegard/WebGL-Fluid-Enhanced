@@ -9,6 +9,7 @@
   "types": "./dist/webgl-fluid-enhanced.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/webgl-fluid-enhanced.d.ts",
       "import": "./dist/webgl-fluid-enhanced.mjs",
       "require": "./dist/webgl-fluid-enhanced.umd.js"
     }
