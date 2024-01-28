@@ -1,3 +1,15 @@
+# [0.6.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.2...v0.6.0) (2024-01-28)
+
+
+### Bug Fixes
+
+* added node version 20 to workflow ([99b4f7c](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/99b4f7c067c81a75be38cef0175bf9b8a03afbea))
+
+
+### Features
+
+* migrated from vite to bun, added new dev server & improved dev experience with linting ([21e198a](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/21e198a0b9498886c6cf370e3e68854cb790a373))
+
 ## [0.5.2](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.1...v0.5.2) (2023-08-11)
 
 
