@@ -1,4 +1,11 @@
+# dependencies
+/node_modules
+
+# misc
 .DS_Store
-.vscode
-dist
-node_modules
+
+# typescript
+*.tsbuildinfo
+
+# build
+/build

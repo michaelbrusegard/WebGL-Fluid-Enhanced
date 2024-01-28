@@ -11,6 +11,7 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 #### [Preview here!](https://michaelbrusegard.github.io/WebGL-Fluid-Enhanced/)
 
 ## Screenshots
+
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/6671d84c-1672-41a6-851c-b20b174dd803)
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/f1d199b1-deb2-45f7-a2b1-2992eb42f562)
 ![fluid](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/assets/56915010/0cb4c9e3-dcba-4545-98ca-9c959e29bb73)
@@ -34,6 +35,7 @@ I wanted to use PavelDoGreat's [WebGL Fluid Simulation](https://github.com/Pavel
 - Pause method
 - Brightness option
 - Method to splat at specific coordinates
+- TypeScript support
 
 ## Config options
 
@@ -115,7 +117,7 @@ webGLFluidEnhanced.splat(
 
   // color is the color of the fluid added by the splat as a string in hexadecimal format.
   // This parameter is optional. If not provided, colors from the palette or then a random color may be used.
-  color
+  color,
 );
 ```
 
@@ -145,13 +147,17 @@ When using the `BACK_COLOR` option, the color you provided will be whitened when
 ### HTML
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
   <body>
     <canvas style="width: 100vw; height: 100vh;"></canvas>
+    <script type="importmap">
+      {
+        "imports": {
+          "webgl-fluid-enhanced": "https://unpkg.com/webgl-fluid-enhanced@latest"
+        }
+      }
+    </script>
     <script type="module">
       import webGLFluidEnhanced from 'webgl-fluid-simulation';
 
@@ -258,7 +264,9 @@ import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 @Component({
   selector: 'app-root',
-  template: ` <canvas #canvasRef style="width: 100vw; height: 100vh;"></canvas> `,
+  template: `
+    <canvas #canvasRef style="width: 100vw; height: 100vh;"></canvas>
+  `,
 })
 export class AppComponent implements OnInit {
   @ViewChild('canvasRef', { static: true }) canvasRef!: ElementRef;
