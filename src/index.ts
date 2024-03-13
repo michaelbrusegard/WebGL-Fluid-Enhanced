@@ -1832,7 +1832,6 @@ const webGLFluidEnhanced = {
     canvas.addEventListener(
       'touchstart',
       (e) => {
-        // e.preventDefault();
         const touches = e.targetTouches;
         while (touches.length >= pointers.length)
           pointers.push(new pointerPrototype());
@@ -1853,7 +1852,6 @@ const webGLFluidEnhanced = {
     canvas.addEventListener(
       'touchmove',
       (e) => {
-        // e.preventDefault();
         const touches = e.targetTouches;
         for (let i = 0; i < touches.length; i++) {
           let pointer = pointers[i + 1];
