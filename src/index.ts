@@ -1829,27 +1829,31 @@ const webGLFluidEnhanced = {
       updatePointerUpData(pointers[0]);
     });
 
-    canvas.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      const touches = e.targetTouches;
-      while (touches.length >= pointers.length)
-        pointers.push(new pointerPrototype());
-      for (let i = 0; i < touches.length; i++) {
-        let posX = scaleByPixelRatio(touches[i].pageX);
-        let posY = scaleByPixelRatio(touches[i].pageY);
-        updatePointerDownData(
-          pointers[i + 1],
-          touches[i].identifier,
-          posX,
-          posY,
-        );
-      }
-    });
+    canvas.addEventListener(
+      'touchstart',
+      (e) => {
+        // e.preventDefault();
+        const touches = e.targetTouches;
+        while (touches.length >= pointers.length)
+          pointers.push(new pointerPrototype());
+        for (let i = 0; i < touches.length; i++) {
+          let posX = scaleByPixelRatio(touches[i].pageX);
+          let posY = scaleByPixelRatio(touches[i].pageY);
+          updatePointerDownData(
+            pointers[i + 1],
+            touches[i].identifier,
+            posX,
+            posY,
+          );
+        }
+      },
+      { passive: false, capture: true },
+    );
 
     canvas.addEventListener(
       'touchmove',
       (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const touches = e.targetTouches;
         for (let i = 0; i < touches.length; i++) {
           let pointer = pointers[i + 1];
@@ -1858,7 +1862,7 @@ const webGLFluidEnhanced = {
           updatePointerMoveData(pointer, posX, posY);
         }
       },
-      false,
+      { passive: false, capture: true },
     );
 
     window.addEventListener('touchend', (e) => {
