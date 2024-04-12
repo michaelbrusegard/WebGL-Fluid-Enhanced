@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.6.0...v0.6.1) (2024-04-12)
+
+
+### Bug Fixes
+
+* update from unpkg to jsdeliver ([84b3544](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/commit/84b354432156124effd292c66f4a26f7a7ebde7a))
+
 # [0.6.0](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/compare/v0.5.2...v0.6.0) (2024-01-28)
 
 
