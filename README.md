@@ -155,7 +155,7 @@ When using the `BACK_COLOR` option, the color you provided will be whitened when
     <script type="importmap">
       {
         "imports": {
-          "webgl-fluid-enhanced": "https://unpkg.com/webgl-fluid-enhanced@latest"
+          "webgl-fluid-enhanced": "https://esm.run/webgl-fluid-enhanced@latest"
         }
       }
     </script>
