@@ -20,7 +20,7 @@ export default async function Page({
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  const path = `docs/content/${page.file.path}`;
+  const path = `docs/content/docs/${page.file.path}`;
 
   return (
     <DocsPage
