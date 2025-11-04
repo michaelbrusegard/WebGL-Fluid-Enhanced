@@ -305,23 +305,19 @@ export class AppComponent implements OnInit {
 
 #### Svelte
 
+[Svelte Playground](https://svelte.dev/playground?version=5.43.3#H4sIAAAAAAAAA3WP3WrCQBCFX2WYUlSIaSzU4vqDomkJpI2oLRQVWc3ELKyrmFErIe9eglp7Ye_OnPnOcCZFI1eEAg80X-pypHcqLJOJpVlQ2Hbsql2BHq3WaGGkNCUoxinycZNHcgOty4HOZmMne9Kce3OZ0C1_sTZMhhMU2FhIs5fJxAAkfNTUnOBBhRwLqDjOfR1iUsuYz9MEcy5tS2a5iKF4ypaarTT3AUCtNustFwv_v1Eo2RyTKRZTCCmSO80CDjR_9V9y2D2zkJWg2YLL2RuEnajVTktWa3OuYV1xgKH3Nhu4w8D_GHnBu4DHp6p13X66ftD1Rl-znjccev3OiXHsWu0P1A38YDDrd3x3NHIFjAt3UfQcOU5h-gtlpfpJnkWWTUyr8XDq00ILmb4ZBW93lE0tZKn0QZkQRSR1QtkPxha-n_YBAAA)
+
 ```svelte
-<!-- Not tested! -->
-<script>
-  import { onMount } from 'svelte';
-
-  let canvasRef;
-
-  onMount(() => {
-    import('webgl-fluid-enhanced').then(({ default: webGLFluidEnhanced }) => {
-      webGLFluidEnhanced.simulation(canvasRef, {
+<canvas
+  style="width: 100vw; height: 100vh;"
+  {@attach (canvas)=>{
+     import('webgl-fluid-enhanced').then(({ default: webGLFluidEnhanced }) => {
+      webGLFluidEnhanced.simulation(canvas, {
         SIM_RESOLUTION: 256,
         VELOCITY_DISSIPATION: 0.99,
         COLOR_PALETTE: ['#ff7f00'],
       });
     });
-  });
-</script>
-
-<canvas bind:this={canvasRef} style="width: 100vw; height: 100vh;" />
+  }}
+></canvas>
 ```

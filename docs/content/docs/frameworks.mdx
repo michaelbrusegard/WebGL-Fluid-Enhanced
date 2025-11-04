@@ -148,25 +148,23 @@ export { SimulationComponent };
 
 ## Svelte
 
+[Svelte Playground](https://svelte.dev/playground?version=5.43.3#H4sIAAAAAAAAA22PO2_DMAyE_wpBoEgKOI-ujm20QB9L9w5VB8WiYwEyZUh03MDwfy_UJEWHjDx-xztOyLojzHGk_cGtGjdYsyJuNddk4Jk6jxk21lHE_HNCOfUJTgJmV-tT36_jkZwkba8j3dJrz0IsEXMsYh1sL5ViANv1Pgh80P7t_TWFv1yzm-A7WNyqtdgpVqyk9hwFou0Gp8V6hhKW7A3dQ1nBlIh_DJTANN4IOlt2qQwkcB1FB1kmJR0IJENgWP4ePa99f9nOiovN3zOKC2OPMD1qEV23_4rNCY5yclQqHK2RNoeH7fZuBy3ZQyuXSaHiqtgYe6wwQ6FvwVzCQPNXhqKtGy0bzBvtIs0_xN7q_LgBAAA)
+
 ```svelte title="Simulation.svelte"
 <script>
-  import { onMount, onDestroy } from 'svelte';
-  import WebGLFluidEnhanced from 'webgl-fluid-enhanced';
+	import WebGLFluidEnhanced from 'webgl-fluid-enhanced';
 
-  let container: HTMLDivElement;
-  let simulation: WebGLFluidEnhanced;
-
-  onMount(() => {
-    simulation = new WebGLFluidEnhanced(container);
-    simulation.start();
-  });
-
-  onDestroy(() => {
-    simulation.stop();
-  });
+	const simulation = (node) => {
+		const sim = new WebGLFluidEnhanced(node);
+		sim.start();
+		return () => sim.stop();
+	}
 </script>
 
-<div bind:this={container} style="width: 100vw; height: 100vh;"></div>
+<div
+	{@attach simulation}
+	style="width: 100vw; height: 100vh;"
+></div>
 ```
 
 ## Solid
