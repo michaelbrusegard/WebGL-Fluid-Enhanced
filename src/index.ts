@@ -52,7 +52,7 @@ class WebGLFluidEnhanced {
     const normalizedX = x / this.simulation.canvas.width;
     const normalizedY = 1.0 - y / this.simulation.canvas.clientHeight;
 
-    let color = HEXColor ? Color.HEXtoRGB(HEXColor) : undefined;
+    let color = HEXColor ? Color.normalizeColor(Color.HEXtoRGB(HEXColor)) : undefined;
 
     if (!color) {
       color = Color.generateColor(
