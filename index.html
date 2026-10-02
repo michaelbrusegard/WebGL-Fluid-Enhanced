@@ -25,6 +25,9 @@
         if (event.code === 'Space') {
           simulation.multipleSplats(1);
         }
+        if (event.code === 'KeyS') {
+          simulation.splatAtLocation(200, 200, 500, -500, '0000aa');
+        }
       });
 
       window.addEventListener('beforeunload', () => {
